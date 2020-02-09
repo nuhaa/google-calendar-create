@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+// gunakan php cli
 if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
 }
@@ -14,6 +15,7 @@ function getClient()
     $client = new Google_Client();
     $client->setApplicationName('Google Calendar API PHP Quickstart');
     $client->setScopes(Google_Service_Calendar::CALENDAR);
+    // ikuti link https://developers.google.com/calendar/quickstart/php untuk mendapatkan credentials.json nya
     $client->setAuthConfig('credentials.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
@@ -64,15 +66,15 @@ $client = getClient();
 $service = new Google_Service_Calendar($client);
 
 // Print the next 10 events on the user's calendar.
-$calendarId = 'primary';
-$optParams = array(
-  'maxResults' => 10,
-  'orderBy' => 'startTime',
-  'singleEvents' => true,
-  'timeMin' => date('c'),
-);
-$results = $service->events->listEvents($calendarId, $optParams);
-$events = $results->getItems();
+// $calendarId = 'primary';
+// $optParams = array(
+//   'maxResults' => 10,
+//   'orderBy' => 'startTime',
+//   'singleEvents' => true,
+//   'timeMin' => date('c'),
+// );
+// $results = $service->events->listEvents($calendarId, $optParams);
+// $events = $results->getItems();
 
 // if (empty($events)) {
 //     print "No upcoming events found.\n";
