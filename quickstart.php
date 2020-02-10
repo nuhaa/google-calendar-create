@@ -105,9 +105,9 @@ $event = new Google_Service_Calendar_Event(array(
     'RRULE:FREQ=DAILY;COUNT=2'
   ),
   'attendees' => array(
-    array('email' => 'nuha.um@gmail.com'),
-    array('email' => 'codingae@gmail.com'),
-    array('email' => 'galuh.tw@gmail.com'),
+    array('email' => 'name1@email.com'),
+    array('email' => 'name2@gmail.com'),
+    array('email' => 'name3@gmail.com'),
   ),
   'reminders' => array(
     'useDefault' => FALSE,
